@@ -1,0 +1,20 @@
+---
+  meta_data: "The dataset contains information about individual attributes and substance use behavior of drug users who live in <LOCATION (REDACTED)> of the U.S. The goal is to predict whether a drug user will have a high or low usage of <DRUG> within the next <TIME_RANGE>."
+  dataset_file: '<PROBLEM>_<DRUG>.csv'
+  prefix_prompt: "Here is one example from this dataset.\n\nGoal: Describe the given data in words."
+  prefix_g_prompt: "The following is data from survey responses on <GROUP> of a drug user who live in <LOCATION (REDACTED)> of the U.S.\n\nGoal: Describe the given data in words."
+  suffix_prompt: "Use your creativity to describe this data accurately and concisely. Do not add any additional information."
+  prefix_qa_prompt: "Here is the description regarding <GROUP> of a drug user."
+  suffix_qa_prompt: "Answer the following questions using only the information provided above."
+  inference_prompt: "Therefore, this drug user is likely to use <DRUG> within the next <TIME_RANGE> at which usage (high or low): "
+  cot_params: null
+  temperature: 0.79
+  model: instruct
+  classes:
+    - high
+    - low
+  summarize_prompt: "Based on these examples, summarize how can we distinguish drug users having high vs. low usage of <DRUG> within the next <TIME_RANGE>."
+  seed: 0
+  separator: "###"
+  num_epochs: 50
+  num_examples: 10
